@@ -231,12 +231,13 @@ def nickname(request):
 		return HttpResponseRedirect('/')
 	
 	error = ''
-		
-	#change nick
-	if change_nick(request, msg[6:]):
-		return HttpResponseRedirect('/')
-	else:
-		error = 'Selected nickname is too short or already in use'
+	
+	if 'nickname' in request.POST:
+		#change nick
+		if change_nick(request, request.POST['nickname']):
+			return HttpResponseRedirect('/')
+		else:
+			error = 'Selected nickname is too short or already in use'
 		
 	return render_to_response('nickname.html', {'error': error}, context_instance=RequestContext(request))
 
