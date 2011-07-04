@@ -1,0 +1,46 @@
+<html>
+<head>
+	<style>
+	@import "/common/style.css";
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="top">
+			<h1>Chat</h1>
+		</div>
+		<div id="sidemenu">
+			<div id="chatrooms_nicknames"></div>
+		</div>
+		<div id="content">
+			<div id="chatroom_messages"></div>
+			<input type="text" style="width: 100%" id="message" />
+		</div>
+		<div id="footer">
+			<div id="chats">
+				<ul>
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<script src="/common/jquery.js"></script>
+	<script>
+	var csrf_token = '{{csrf_token}}';
+	</script>
+	<script src="/common/script.js"></script>
+	<script type="text/javascript">
+	welcome_messages = [
+		'Hi!',
+		'Welcome to our chat system.',
+		'',
+		'Commands:',
+		'/join #channel-name ------- join channel',
+		'/nick new-nickname -------- change your nickname',
+		'/msg nickname ------------- start private conversation with \'nickname\'',
+		'/leave -------------------- leave current channel',
+		'/upload ------------------- to show upload dialog'
+	];
+	</script>
+</body>
+</html>

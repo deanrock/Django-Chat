@@ -1,0 +1,17 @@
+<html>
+<head>
+	<style>
+	@import "/common/style.css";
+	
+	#x {padding: 50px;}
+	</style>
+</head>
+<body>
+<form id="x" action="/nickname" method="post">
+	{{error}}<br />
+	Nickname: <input type="text" name="nickname" />
+	<input type="submit" value="Check" />
+	{% csrf_token %}
+</form>
+</body>
+</html>

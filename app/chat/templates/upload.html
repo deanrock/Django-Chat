@@ -1,0 +1,18 @@
+<html>
+<head>
+	<style>
+	@import "/common/style.css";
+	
+	#x {padding: 50px;}
+	</style>
+</head>
+<body>
+<form id="x" action="/upload?id={{id}}" enctype="multipart/form-data" method="post">
+	{% csrf_token %}
+
+
+	<input name="file" size="20" type="file" /><br />
+	<input type="submit" value="Upload" />
+</form>
+</body>
+</html>
